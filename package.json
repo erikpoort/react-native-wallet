@@ -1,0 +1,33 @@
+{
+  "name": "react-native-wallet",
+  "version": "0.0.1",
+  "description": "Apple Wallet ReactNative module.",
+  "files": ["src", "ios"],
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ErikMediaMonks/react-native-wallet.git"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "native",
+    "apple",
+    "wallet"
+  ],
+  "author": "Erik Poort",
+  "license": "GNU General Public License v3.0",
+  "bugs": {
+    "url": "https://github.com/ErikMediaMonks/react-native-wallet/issues"
+  },
+  "homepage": "https://github.com/ErikMediaMonks/react-native-wallet#readme",
+  "dependencies": {
+  },
+  "peerDependencies": {
+    "react": ">=16.0.0-alpha.6",
+    "react-native": ">=0.46.0"
+  }
+}
