@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03C240B41F2A730800EF9D85 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C240B31F2A730800EF9D85 /* PassKit.framework */; };
 		2FA282053E39A15B48DC40A7 /* RNWalletModule.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2FA28BB3E18B86429CE84FFC /* RNWalletModule.h */; };
 		2FA285363CAEB226F3EAC5C3 /* RNWalletModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28CD4ED699808829272C7 /* RNWalletModule.m */; };
 /* End PBXBuildFile section */
@@ -25,6 +26,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		03C240B31F2A730800EF9D85 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		2FA284D2B36EEBECA56B56E3 /* libRNWalletModule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNWalletModule.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FA28BB3E18B86429CE84FFC /* RNWalletModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNWalletModule.h; sourceTree = "<group>"; };
 		2FA28CD4ED699808829272C7 /* RNWalletModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNWalletModule.m; sourceTree = "<group>"; };
@@ -35,17 +37,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03C240B41F2A730800EF9D85 /* PassKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03C240B21F2A730800EF9D85 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				03C240B31F2A730800EF9D85 /* PassKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2FA283FB6E1E2E12E8B5F3EF = {
 			isa = PBXGroup;
 			children = (
 				2FA28A0ECA8A72CF7813E839 /* Products */,
 				2FA288CD26BDFC622DC2FAF7 /* RNWalletModule */,
+				03C240B21F2A730800EF9D85 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
