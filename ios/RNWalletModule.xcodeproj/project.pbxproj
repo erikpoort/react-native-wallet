@@ -1,0 +1,272 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03C240B41F2A730800EF9D85 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C240B31F2A730800EF9D85 /* PassKit.framework */; };
+		2FA282053E39A15B48DC40A7 /* RNWalletModule.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2FA28BB3E18B86429CE84FFC /* RNWalletModule.h */; };
+		2FA285363CAEB226F3EAC5C3 /* RNWalletModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28CD4ED699808829272C7 /* RNWalletModule.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2FA286064D84A7E5DAEFD418 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				2FA282053E39A15B48DC40A7 /* RNWalletModule.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		03C240B31F2A730800EF9D85 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
+		2FA284D2B36EEBECA56B56E3 /* libRNWalletModule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNWalletModule.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FA28BB3E18B86429CE84FFC /* RNWalletModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNWalletModule.h; sourceTree = "<group>"; };
+		2FA28CD4ED699808829272C7 /* RNWalletModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNWalletModule.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2FA2847BF6D017A4E789A712 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03C240B41F2A730800EF9D85 /* PassKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03C240B21F2A730800EF9D85 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				03C240B31F2A730800EF9D85 /* PassKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2FA283FB6E1E2E12E8B5F3EF = {
+			isa = PBXGroup;
+			children = (
+				2FA28A0ECA8A72CF7813E839 /* Products */,
+				2FA288CD26BDFC622DC2FAF7 /* RNWalletModule */,
+				03C240B21F2A730800EF9D85 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2FA288CD26BDFC622DC2FAF7 /* RNWalletModule */ = {
+			isa = PBXGroup;
+			children = (
+				2FA28BB3E18B86429CE84FFC /* RNWalletModule.h */,
+				2FA28CD4ED699808829272C7 /* RNWalletModule.m */,
+			);
+			path = RNWalletModule;
+			sourceTree = "<group>";
+		};
+		2FA28A0ECA8A72CF7813E839 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2FA284D2B36EEBECA56B56E3 /* libRNWalletModule.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2FA288B3D79B299A5791E113 /* RNWalletModule */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FA281236EEE367B9F19A8F9 /* Build configuration list for PBXNativeTarget "RNWalletModule" */;
+			buildPhases = (
+				2FA28EC8F95BB33A73042048 /* Sources */,
+				2FA2847BF6D017A4E789A712 /* Frameworks */,
+				2FA286064D84A7E5DAEFD418 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RNWalletModule;
+			productName = RNWalletModule;
+			productReference = 2FA284D2B36EEBECA56B56E3 /* libRNWalletModule.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2FA283B6E84C568EBEDC96D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = MediaMonks;
+			};
+			buildConfigurationList = 2FA28A9D3F6348508B2F4C99 /* Build configuration list for PBXProject "RNWalletModule" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2FA283FB6E1E2E12E8B5F3EF;
+			productRefGroup = 2FA28A0ECA8A72CF7813E839 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2FA288B3D79B299A5791E113 /* RNWalletModule */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2FA28EC8F95BB33A73042048 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FA285363CAEB226F3EAC5C3 /* RNWalletModule.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2FA28140F4C1854F070DFAE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2FA284A886761E7B726706FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../ios/Pods/Headers";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2FA28541468B720A560873A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		2FA2879161A0DA74109551E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../ios/Pods/Headers";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2FA281236EEE367B9F19A8F9 /* Build configuration list for PBXNativeTarget "RNWalletModule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FA28140F4C1854F070DFAE9 /* Debug */,
+				2FA28541468B720A560873A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FA28A9D3F6348508B2F4C99 /* Build configuration list for PBXProject "RNWalletModule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FA284A886761E7B726706FC /* Debug */,
+				2FA2879161A0DA74109551E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2FA283B6E84C568EBEDC96D2 /* Project object */;
+}
