@@ -1,8 +1,11 @@
 {
   "name": "react-native-wallet",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Apple Wallet ReactNative module.",
-  "files": ["src", "ios"],
+  "files": [
+    "src",
+    "ios"
+  ],
   "main": "src/index.js",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start"
@@ -24,8 +27,7 @@
     "url": "https://github.com/ErikMediaMonks/react-native-wallet/issues"
   },
   "homepage": "https://github.com/ErikMediaMonks/react-native-wallet#readme",
-  "dependencies": {
-  },
+  "dependencies": {},
   "peerDependencies": {
     "react": ">=16.0.0-alpha.6",
     "react-native": ">=0.46.0"
