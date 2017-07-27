@@ -57,7 +57,7 @@ RCT_EXPORT_METHOD(
 
 		self.passLibrary = [[PKPassLibrary alloc] init];
 		if ([self.passLibrary containsPass:self.pass]) {
-			resolve(@(NO));
+			resolve(@(YES));
 			return;
 		}
 
@@ -75,12 +75,15 @@ RCT_EXPORT_METHOD(
 
 - (void)addPassesViewControllerDidFinish:(PKAddPassesViewController *)controller
 {
-	if (self.resolveBlock) {
-		self.resolveBlock(@([self.passLibrary containsPass:self.pass]));
+	[controller dismissViewControllerAnimated:YES completion:^{
+		if (self.resolveBlock) {
+			self.resolveBlock(@([self.passLibrary containsPass:self.pass]));
+		}
+
 		controller.delegate = nil;
 		self.passLibrary = nil;
 		self.pass = nil;
-	}
+	}];
 }
 
 @end
