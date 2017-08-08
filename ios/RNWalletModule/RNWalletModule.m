@@ -67,6 +67,10 @@ RCT_EXPORT_METHOD(
 		passController.delegate = self;
 		self.resolveBlock = resolve;
 
+		while (viewController.presentedViewController) {
+			viewController = viewController.presentedViewController;
+		}
+
 		[viewController presentViewController:passController animated:YES completion:nil];
 	});
 }
