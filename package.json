@@ -4,7 +4,8 @@
   "description": "Apple Wallet ReactNative module.",
   "files": [
     "src",
-    "ios"
+    "ios",
+    "android"
   ],
   "main": "src/index.js",
   "scripts": {
@@ -19,7 +20,10 @@
     "react-native",
     "native",
     "apple",
-    "wallet"
+    "wallet",
+    "android",
+    "passbook",
+    "passkit"
   ],
   "author": "Erik Poort",
   "license": "GNU General Public License v3.0",

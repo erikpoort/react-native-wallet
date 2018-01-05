@@ -1,5 +1,5 @@
 # react-native-wallet
-ReactNative module for Apple Wallet
+ReactNative module for Apple Wallet and Android apps listening to shoebox://
 Version 1.0.2
 
 ## Installation

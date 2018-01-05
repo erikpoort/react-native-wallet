@@ -1,13 +1,12 @@
 import { NativeModules } from 'react-native';
 const { RNWalletModule } = NativeModules;
-import { _canAddPasses, _showAddPassController } from './platform-specific';
 
 /**
  * Check if you can add passes.
  * @param callback A callback which will receive a boolean
  */
 function canAddPasses(callback) {
-  _canAddPasses(RNWalletModule, callback)
+  RNWalletModule.canAddPasses(callback);
 }
 
 /**
@@ -17,7 +16,7 @@ function canAddPasses(callback) {
  * @return Promise Passing a boolean
  */
 function showAddPassController(passURL) {
-  return _showAddPassController(RNWalletModule, passURL);
+  return RNWalletModule.showAddPassController(passURL);
 }
 
 module.exports = {
