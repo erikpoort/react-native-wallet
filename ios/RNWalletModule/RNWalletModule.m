@@ -13,7 +13,7 @@ static NSString *const kRejectCode = @"wallet";
 
 @interface RNWalletModule () <PKAddPassesViewControllerDelegate>
 
-@property (nonatomic, strong) RCTPromiseResolveBlock resolveBlock;
+@property (nonatomic, copy) RCTPromiseResolveBlock resolveBlock;
 @property (nonatomic, strong) PKPass *pass;
 @property (nonatomic, strong) PKPassLibrary *passLibrary;
 
@@ -29,13 +29,22 @@ RCT_EXPORT_METHOD(
 }
 
 RCT_EXPORT_METHOD(
-	showAddPassController:(NSString *)pass
+                  showAddPassControllerFromData:(NSData *)data
+                  resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject
+                  ) {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self showViewControllerWithData:data resolver:resolve rejecter:reject];
+    });
+    
+}
+
+RCT_EXPORT_METHOD(
+	showAddPassControllerFromString:(NSString *)pass
 	resolver:(RCTPromiseResolveBlock)resolve
 	rejecter:(RCTPromiseRejectBlock)reject
 ) {
 	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-		NSError *passError;
-
 		NSURL *passURL = [[NSURL alloc] initWithString:pass];
 		if (!passURL) {
 			reject(kRejectCode, @"The pass URL is invalid", nil);
@@ -48,31 +57,38 @@ RCT_EXPORT_METHOD(
 			return;
 		}
 
-		self.pass = [[PKPass alloc] initWithData:data error:&passError];
-
-		if (passError) {
-			reject(kRejectCode, @"The pass is invalid", passError);
-			return;
-		}
-
-		self.passLibrary = [[PKPassLibrary alloc] init];
-		if ([self.passLibrary containsPass:self.pass]) {
-			resolve(@(YES));
-			return;
-		}
-
-		UIViewController *viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
-
-		PKAddPassesViewController *passController = [[PKAddPassesViewController alloc] initWithPass:self.pass];
-		passController.delegate = self;
-		self.resolveBlock = resolve;
-
-		while (viewController.presentedViewController) {
-			viewController = viewController.presentedViewController;
-		}
-
-		[viewController presentViewController:passController animated:YES completion:nil];
+		[self showViewControllerWithData:data resolver:resolve rejecter:reject];
 	});
+}
+
+- (void)showViewControllerWithData:(NSData *)data
+                          resolver:(RCTPromiseResolveBlock)resolve
+                          rejecter:(RCTPromiseRejectBlock)reject {
+    NSError *passError;
+    self.pass = [[PKPass alloc] initWithData:data error:&passError];
+    
+    if (passError) {
+        reject(kRejectCode, @"The pass is invalid", passError);
+        return;
+    }
+    
+    self.passLibrary = [[PKPassLibrary alloc] init];
+    if ([self.passLibrary containsPass:self.pass]) {
+        resolve(@(YES));
+        return;
+    }
+    
+    UIViewController *viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    
+    PKAddPassesViewController *passController = [[PKAddPassesViewController alloc] initWithPass:self.pass];
+    passController.delegate = self;
+    self.resolveBlock = resolve;
+    
+    while (viewController.presentedViewController) {
+        viewController = viewController.presentedViewController;
+    }
+    
+    [viewController presentViewController:passController animated:YES completion:nil];
 }
 
 #pragma mark - PKAddPassesViewControllerDelegate
@@ -82,6 +98,7 @@ RCT_EXPORT_METHOD(
 	[controller dismissViewControllerAnimated:YES completion:^{
 		if (self.resolveBlock) {
 			self.resolveBlock(@([self.passLibrary containsPass:self.pass]));
+            self.resolveBlock = nil;
 		}
 
 		controller.delegate = nil;
