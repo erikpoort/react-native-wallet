@@ -1,6 +1,6 @@
 import { NativeModules } from 'react-native';
 const { RNWalletModule } = NativeModules;
-import { _canAddPasses, _showAddPassController } from './platform-specific';
+import { _canAddPasses, _showAddPassControllerFromString, _showAddPassControllerFromData } from './platform-specific';
 
 /**
  * Check if you can add passes.
@@ -16,11 +16,16 @@ function canAddPasses(callback) {
  * @param passURL URL to pkpass file
  * @return Promise Passing a boolean
  */
-function showAddPassController(passURL) {
-  return _showAddPassController(RNWalletModule, passURL);
+function showAddPassControllerFromString(passURL) {
+  return _showAddPassControllerFromString(RNWalletModule, passURL);
+}
+
+function showAddPassControllerFromData(data) {
+  return _showAddPassControllerFromData(RNWalletModule, data);
 }
 
 module.exports = {
   canAddPasses,
-  showAddPassController,
+  showAddPassControllerFromString,
+  showAddPassControllerFromData
 }
