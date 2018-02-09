@@ -40,7 +40,7 @@ RCT_EXPORT_METHOD(
 }
 
 RCT_EXPORT_METHOD(
-	showAddPassControllerFromString:(NSString *)pass
+	showAddPassControllerFromURL:(NSString *)pass
 	resolver:(RCTPromiseResolveBlock)resolve
 	rejecter:(RCTPromiseRejectBlock)reject
 ) {
@@ -61,11 +61,11 @@ RCT_EXPORT_METHOD(
 	});
 }
 
-- (void)showViewControllerWithData:(NSData *)data
+- (void)showViewControllerWithData:(NSString *)data
                           resolver:(RCTPromiseResolveBlock)resolve
                           rejecter:(RCTPromiseRejectBlock)reject {
     NSError *passError;
-    self.pass = [[PKPass alloc] initWithData:data error:&passError];
+    self.pass = [[PKPass alloc] initWithData:[RCTConvert NSData:data] error:&passError];
     
     if (passError) {
         reject(kRejectCode, @"The pass is invalid", passError);

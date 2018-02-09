@@ -14,8 +14,8 @@ function _canAddPasses(Module, callback) {
  * @param passURL URL to pkpass file
  * @return Promise Passing a boolean
  */
-function _showAddPassControllerFromString(Module, passURL) {
-  return Module.showAddPassControllerFromString(passURL);
+function _showAddPassControllerFromURL(Module, passURL) {
+  return Module.showAddPassControllerFromURL(passURL);
 }
 
 function _showAddPassControllerFromData(Module, data) {
@@ -24,6 +24,6 @@ function _showAddPassControllerFromData(Module, data) {
 
 module.exports = {
   _canAddPasses,
-  _showAddPassControllerFromString,
+  _showAddPassControllerFromURL,
   _showAddPassControllerFromData,
 }
