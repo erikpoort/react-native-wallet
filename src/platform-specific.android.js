@@ -15,12 +15,12 @@ function _showAddPassControllerFromURL(Module, passURL) {
   return Promise.reject("Android can't add passes");
 }
 
-function _showAddPassControllerFromData(Module, data) {
+function _showAddPassControllerFromFile(Module, filepath) {
   return Promise.reject("Android can't add passes");
 }
 
 module.exports = {
   _canAddPasses,
   _showAddPassControllerFromURL,
-  _showAddPassControllerFromData,
+  _showAddPassControllerFromFile,
 }

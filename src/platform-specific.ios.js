@@ -18,12 +18,12 @@ function _showAddPassControllerFromURL(Module, passURL) {
   return Module.showAddPassControllerFromURL(passURL);
 }
 
-function _showAddPassControllerFromData(Module, data) {
-  return Module.showAddPassControllerFromData(data);
+function _showAddPassControllerFromFile(Module, filePath) {
+  return Module.showAddPassControllerFromFile(filePath);
 }
 
 module.exports = {
   _canAddPasses,
   _showAddPassControllerFromURL,
-  _showAddPassControllerFromData,
+  _showAddPassControllerFromFile,
 }

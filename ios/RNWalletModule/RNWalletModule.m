@@ -29,14 +29,18 @@ RCT_EXPORT_METHOD(
 }
 
 RCT_EXPORT_METHOD(
-                  showAddPassControllerFromData:(NSData *)data
+                  showAddPassControllerFromFile:(NSString *)filepath
                   resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject
                   ) {
+    NSData* data =[[NSData alloc]init];
+
+    data = [NSData dataWithContentsOfFile:filepath];
+
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self showViewControllerWithData:data resolver:resolve rejecter:reject];
     });
-    
+
 }
 
 RCT_EXPORT_METHOD(
@@ -66,28 +70,28 @@ RCT_EXPORT_METHOD(
                           rejecter:(RCTPromiseRejectBlock)reject {
     NSError *passError;
     self.pass = [[PKPass alloc] initWithData:[RCTConvert NSData:data] error:&passError];
-    
+
     if (passError) {
         reject(kRejectCode, @"The pass is invalid", passError);
         return;
     }
-    
+
     self.passLibrary = [[PKPassLibrary alloc] init];
     if ([self.passLibrary containsPass:self.pass]) {
         resolve(@(YES));
         return;
     }
-    
+
     UIViewController *viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
-    
+
     PKAddPassesViewController *passController = [[PKAddPassesViewController alloc] initWithPass:self.pass];
     passController.delegate = self;
     self.resolveBlock = resolve;
-    
+
     while (viewController.presentedViewController) {
         viewController = viewController.presentedViewController;
     }
-    
+
     [viewController presentViewController:passController animated:YES completion:nil];
 }
 
