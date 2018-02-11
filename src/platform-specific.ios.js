@@ -14,11 +14,16 @@ function _canAddPasses(Module, callback) {
  * @param passURL URL to pkpass file
  * @return Promise Passing a boolean
  */
-function _showAddPassController(Module, passURL) {
-  return Module.showAddPassController(passURL);
+function _showAddPassControllerFromURL(Module, passURL) {
+  return Module.showAddPassControllerFromURL(passURL);
+}
+
+function _showAddPassControllerFromFile(Module, filePath) {
+  return Module.showAddPassControllerFromFile(filePath);
 }
 
 module.exports = {
   _canAddPasses,
-  _showAddPassController,
+  _showAddPassControllerFromURL,
+  _showAddPassControllerFromFile,
 }
