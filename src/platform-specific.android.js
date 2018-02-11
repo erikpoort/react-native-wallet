@@ -11,11 +11,16 @@ function _canAddPasses(Module, callback) {
  * @param passURL URL to pkpass file
  * @return Promise Always rejecting
  */
-function _showAddPassController(Module, passURL) {
+function _showAddPassControllerFromURL(Module, passURL) {
+  return Promise.reject("Android can't add passes");
+}
+
+function _showAddPassControllerFromFile(Module, filepath) {
   return Promise.reject("Android can't add passes");
 }
 
 module.exports = {
   _canAddPasses,
-  _showAddPassController,
+  _showAddPassControllerFromURL,
+  _showAddPassControllerFromFile,
 }
