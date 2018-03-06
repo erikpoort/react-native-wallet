@@ -1,6 +1,6 @@
 {
   "name": "react-native-wallet",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Apple Wallet ReactNative module.",
   "files": [
     "src",
