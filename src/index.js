@@ -17,7 +17,7 @@ function canAddPasses(callback) {
  * @return Promise Passing a boolean
  */
 function showAddPassControllerFromURL(passURL) {
-  return _showAddPassControllerFromString(RNWalletModule, passURL);
+  return _showAddPassControllerFromURL(RNWalletModule, passURL);
 }
 
 /**
