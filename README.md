@@ -1,6 +1,6 @@
 # react-native-wallet
 ReactNative module for Apple Wallet
-Version 1.0.6
+Version 1.0.7
 
 ## Installation
 
