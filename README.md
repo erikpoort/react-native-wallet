@@ -28,6 +28,14 @@ Wallet.canAddPasses(added => {
 });
 
 /**
+ * Check if you have any passes.
+ * @param callback A callback which will receive an error or the pass serials
+ */
+Wallet.passes((err, passes) => {
+	// Handle rest
+});
+
+/**
  * Show the pass controller for the provided URL.
  * The resolving promise will contain a boolean saying if the pass was added or not.
  * @param passURL URL to pkpass file

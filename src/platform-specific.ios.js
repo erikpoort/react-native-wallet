@@ -4,7 +4,7 @@
  */
 function _canAddPasses(Module, callback) {
   Module.canAddPasses(result => {
-    callback(result);
+    callback(result)
   })
 }
 
@@ -15,15 +15,20 @@ function _canAddPasses(Module, callback) {
  * @return Promise Passing a boolean
  */
 function _showAddPassControllerFromURL(Module, passURL) {
-  return Module.showAddPassControllerFromURL(passURL);
+  return Module.showAddPassControllerFromURL(passURL)
 }
 
 function _showAddPassControllerFromFile(Module, filePath) {
-  return Module.showAddPassControllerFromFile(filePath);
+  return Module.showAddPassControllerFromFile(filePath)
+}
+
+function _passes(Module, callback) {
+  Module.passes(callback)
 }
 
 module.exports = {
   _canAddPasses,
   _showAddPassControllerFromURL,
   _showAddPassControllerFromFile,
+  _passes
 }
