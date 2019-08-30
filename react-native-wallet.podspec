@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.license        = package['license']
   s.author         = package['author']
   s.homepage       = package['homepage']
-  s.source         = { :git => 'https://github.com/markmadlangbayan/react-native-wallet', :tag => s.version }
+  s.source         = { :git => 'https://github.com/erikpoort/react-native-wallet', :tag => s.version }
 
   s.requires_arc   = true
   s.platform       = :ios, '7.0'
