@@ -4,7 +4,8 @@
   "description": "Apple Wallet ReactNative module.",
   "files": [
     "src",
-    "ios"
+    "ios",
+    "react-native-wallet.podspec"
   ],
   "main": "src/index.js",
   "scripts": {
