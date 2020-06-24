@@ -78,7 +78,9 @@ RCT_EXPORT_METHOD(
 
     self.passLibrary = [[PKPassLibrary alloc] init];
     if ([self.passLibrary containsPass:self.pass]) {
-        resolve(@(YES));
+        NSMutableDictionary *myDictionary = [[NSMutableDictionary alloc] init];
+        [myDictionary setObject:@(YES) forKey:@"alreadyInWallet"];
+        resolve(myDictionary);
         return;
     }
 
