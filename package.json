@@ -8,6 +8,7 @@
     "react-native-wallet.podspec"
   ],
   "main": "src/index.js",
+  "types": "src/index.d.ts",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
