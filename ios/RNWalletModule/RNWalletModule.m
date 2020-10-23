@@ -29,6 +29,18 @@ RCT_EXPORT_METHOD(
 }
 
 RCT_EXPORT_METHOD(
+	passes:(RCTResponseSenderBlock)callback
+) {
+    self.passLibrary = [[PKPassLibrary alloc] init];
+    NSArray *passes = [self.passLibrary passes];
+
+    NSDictionary *dict = [NSDictionary dictionaryWithObjects:passes forKeys:[passes valueForKey:@"serialNumber"]];
+    NSArray*serials=[dict allKeys];
+
+    callback(@[[NSNull null], serials]);
+}
+
+RCT_EXPORT_METHOD(
                   showAddPassControllerFromFile:(NSString *)filepath
                   resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject
