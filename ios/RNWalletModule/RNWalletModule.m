@@ -81,6 +81,7 @@ RCT_EXPORT_METHOD(
         resolve(@(YES));
         return;
     }
+    dispatch_async(dispatch_get_main_queue(), ^{
 
     UIViewController *viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
 
@@ -93,6 +94,7 @@ RCT_EXPORT_METHOD(
     }
 
     [viewController presentViewController:passController animated:YES completion:nil];
+    });
 }
 
 #pragma mark - PKAddPassesViewControllerDelegate
